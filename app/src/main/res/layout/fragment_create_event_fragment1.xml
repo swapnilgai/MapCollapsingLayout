@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="8dp">
+
+            <com.devspark.robototextview.widget.RobotoEditText
+                android:id="@+id/event_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Event Name"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:background="@drawable/edit_text_border"
+                android:textColor="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <!--Date of event-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <!--<com.devspark.robototextview.widget.RobotoTextView-->
+                <!--android:id="@+id/public_event_date_lable"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Event Date"-->
+                <!--android:textSize="15dp"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+
+
+            <com.devspark.robototextview.widget.RobotoEditText
+                android:id="@+id/public_event_date_from"
+                android:layout_width="0dip"
+                android:layout_weight="1.0"
+                android:paddingLeft="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="From"
+                android:background="@drawable/edit_text_border"
+                android:singleLine="true"
+                android:inputType="textCapWords|date"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"/>
+
+
+            <com.devspark.robototextview.widget.RobotoEditText
+                android:id="@+id/public_event_date_to"
+                android:layout_width="0dip"
+                android:layout_weight="1.0"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="To"
+                android:layout_marginBottom="16dp"
+                android:singleLine="true"
+                android:background="@drawable/edit_text_border"
+                android:layout_marginLeft="30dp"
+                android:inputType="textCapWords|date"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp">
+
+            <com.devspark.robototextview.widget.RobotoEditText
+                android:id="@+id/public_event_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:singleLine="false"
+                android:hint="Event Description"
+                android:background="@drawable/edit_text_border"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="25dp">
+        <AutoCompleteTextView
+            android:id="@+id/create_public_event_autocomplete_places"
+            android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:paddingLeft="8dp"
+            android:background="@drawable/edit_text_border"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:hint="Enter Address"
+            android:singleLine="true" />
+
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/create_public_event_current_location"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:src="@drawable/ic_add_white_18dp"
+            app:cb_color="@color/colorPrimary"
+            app:cb_pressedRingWidth="10dip" />
+
+        </LinearLayout>
+
+        <!-- http://stackoverflow.com/questions/11188398/how-to-change-the-spinner-background-design-and-color-for-android -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/public_event_type"
+            android:layout_marginRight="3dp"
+            android:layout_weight=".28"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/spinner_border"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:entries="@array/country_arrays"
+                android:layout_marginLeft="5dp"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_drop_down_black_18dp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight=".28"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/spinner_border"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/public_event_visiblity_miles"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:entries="@array/country_arrays"
+                android:spinnerMode="dropdown" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_drop_down_black_18dp" />
+
+        </RelativeLayout>
+
+
+        <!--Date of event-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center">
+
+
+        <com.devspark.robototextview.widget.RobotoEditText
+            android:id="@+id/public_event_capacity"
+            android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Capacity"
+            android:background="@drawable/edit_text_border"
+            android:singleLine="true"
+            android:inputType="number"
+            android:textColor="@color/colorPrimaryDark"/>
+
+
+        <CheckBox android:id="@+id/public_events_volatile"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="volatile"
+                  android:textSize="20dp"
+                  android:layout_gravity="center"
+                  android:onClick="onCheckboxClicked"/>
+        </LinearLayout>
+
+        <!--Time of event-->
+
+
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/public_public_event_page1_next"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorPrimary"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:text="Next" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
