@@ -1,14 +1,16 @@
 package com.java.mapcollapsinglayout;
 
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.View.OnClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private FloatingActionButton addImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +29,27 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
+        addImage = (FloatingActionButton) findViewById(R.id.add_image);
+
         tabLayout.setupWithViewPager(viewPager);
+
+
+
+        addImage.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
